@@ -36,6 +36,7 @@ class AuthenticationController extends Controller
             ->first();
         if (null == $user) {
             // 如果用户不存在则将其保存到 users 表
+            $newUser = [];
             $newUser['name'] =$socialUser->getName();
             if (empty($newUser['name'])) {
                 $newUser['name'] = $socialUser->getNickname();
